@@ -184,17 +184,24 @@
     </div>
 
     <script>
-      // Mobile nav toggle
+      // —— Mobile nav toggle ——
       const navToggle = document.getElementById("nav-toggle");
       const navList = document.getElementById("nav-list");
       navToggle?.addEventListener("click", () => {
         navList.classList.toggle("show");
       });
 
-      // Collapse / expand social cards
+      // —— Exclusive card toggle ——
       document.querySelectorAll(".social-icon").forEach((icon) => {
         icon.addEventListener("click", () => {
-          icon.parentElement.classList.toggle("open");
+          const card = icon.parentElement;
+          const alreadyOpen = card.classList.contains("open");
+
+          // close all cards
+          document.querySelectorAll(".social-card.open").forEach((c) => c.classList.remove("open"));
+
+          // reopen if it wasn't already open
+          if (!alreadyOpen) card.classList.add("open");
         });
       });
     </script>
