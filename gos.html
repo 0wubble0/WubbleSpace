@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wubble Space – Group Order List</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <style>
+      .socialscontainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        padding: 1rem;
+      }
+
+      @media (min-width: 600px) {
+        .socialscontainer {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 0.75rem;
+        }
+      }
+
+      .social-card {
+        border: 1px solid #afafaf;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+        background: #ffffff;
+        transition: box-shadow 0.3s ease;
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        margin: 0.25rem;
+      }
+
+      .social-card:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .social-icon {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .social-links {
+        display: none;
+        flex-direction: column;
+        margin-top: 0.75rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .social-card.open .social-links {
+        display: flex;
+      }
+
+      .socialsbutton.small {
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="browser-mockup">
+      <div class="browser-header">
+        <button class="browser-btn">⬅️</button>
+        <button class="browser-btn">➡️</button>
+        <button class="browser-btn">🔄</button>
+        <input type="text" class="url-bar" value="wubble.space/Group-Order-List" />
+      </div>
+
+      <div class="browser-content">
+        <!-- Navigation bar -->
+        <nav class="navbar">
+          <div class="nav-toggle" id="nav-toggle">☰</div>
+          <ul class="nav-list" id="nav-list">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./socials.html" class="nav-link">Socials</a>
+            </li>
+            <li class="nav-item">
+              <a href="./goinfo.html" class="nav-link">GO/BST Info</a>
+            </li>
+            <li class="nav-item">
+              <a href="./gos.html" class="nav-link">GO List</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.mercari.com/u/wubbleiscute/" class="nav-link"
+                >Mercari</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <h1 class="welcome-heading">click on the cards!</h1>
+
+        <div class="socialscontainer">
+          <!-- Discord -->
+          <section class="social-card">
+            <img
+              src="images/ghp3makestarpobs.png"
+              alt="GHP3 Makestar Pobs"
+              class="social-icon"
+            />
+            <div class="social-links">
+              <a
+                href="https://x.com/wubbleiscute/status/1927570707816333471"
+                class="socialsbutton socialsbutton-discord small"
+                target="_blank"
+                >Original Post</a
+              >
+              <a
+                href="https://docs.google.com/spreadsheets/d/1m38JHCtY7D36ks7HOBN_FEHehDiK-3gSzC4aU8w5N-E/edit?usp=sharing"
+                class="socialsbutton socialsbutton-discord small"
+                target="_blank"
+                >Claims</a
+              >
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLScj7LyBIcu5phw4JR7WmEVDLeweeS-u0Wq78R_-ZGiX-2YbHA/viewform?usp=dialog"
+                class="socialsbutton socialsbutton-discord small"
+                target="_blank"
+                >Payment Form</a
+              >
+              <a
+                href="#"
+                class="socialsbutton socialsbutton-discord small"
+                target="_blank"
+                >Shipping Form</a
+              >
+            </div>
+          </section>
+
+          <!-- Instagram -->
+          <section class="social-card">
+            <img
+              src="images/govtship.png"
+              alt="GHP2 Makestar Unit"
+              class="social-icon"
+            />
+            <div class="social-links">
+              <a
+                href="#"
+                class="socialsbutton socialsbutton-instagram small"
+                target="_blank"
+                >GO Ended</a
+              >
+            </div>
+          </section>
+
+          <!-- Spotify -->
+          <section class="social-card">
+            <img
+              src="images/nacificgo2024.png"
+              alt="Nacific GO"
+              class="social-icon"
+            />
+            <div class="social-links">
+              <a
+                href="#"
+                class="socialsbutton socialsbutton-spotify small"
+                target="_blank"
+                >GO Ended</a
+              >
+            </div>
+          </section>
+        </div>
+
+        <p class="current-obsession">
+          website made by wubble, hosted on github
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Mobile nav toggle
+      const navToggle = document.getElementById("nav-toggle");
+      const navList = document.getElementById("nav-list");
+      navToggle?.addEventListener("click", () => {
+        navList.classList.toggle("show");
+      });
+
+      // Collapse / expand social cards
+      document.querySelectorAll(".social-icon").forEach((icon) => {
+        icon.addEventListener("click", () => {
+          icon.parentElement.classList.toggle("open");
+        });
+      });
+    </script>
+  </body>
+</html>
