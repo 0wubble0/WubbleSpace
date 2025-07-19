@@ -49,15 +49,15 @@ body {
 
 /* Style the browser mockup container */
 .browser-mockup {
-    width: 80%;
-    max-width: 800px;
+    width: 90%;
+    max-width: 1000px;
     background-color: #fefefe;
     border: 1px solid #afafaf;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     overflow-y: auto; /* Use 'auto' instead of 'visible' */
     overflow-x: hidden;
-    max-height: 80vh; /* Limit the maximum height to 80% of the viewport height */
+    max-height: 90vh; /* Limit the maximum height to 80% of the viewport height */
 }
 
 /* Style the browser header */
@@ -183,6 +183,21 @@ body {
 .playlist-container-right {
     margin-left: 10px;
     align-items: center;
+}
+
+.playlist-container-left,
+.playlist-container-right {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+  .playlist-container-left,
+  .playlist-container-right {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* Style the sections */
